@@ -1,0 +1,105 @@
+.gear_body {
+	background:url(/assets/gear_p.png) top right no-repeat;
+	background-attachment: fixed;
+	margin-top: 50px;}
+
+#head_left {
+	float:left;
+	margin-top:60px;
+	width: 450px;
+	height:400px;
+	overflow:auto;
+	border-right:1px solid black;
+	padding-right:15px !important;}
+
+#head_right {
+	margin-top:75px;
+	width: 300px;
+	float:right;}	
+
+h3.head {
+	font-size:18px !important;
+	text-align:center;}
+
+h4.head5 {
+	font-size:16px !important;}
+
+p.head4 {
+	font-size:14px;
+	margin-left:10px;}
+
+p.head {}
+
+p.head1 {
+	margin-left:20px;
+	font-size:14px;}
+
+li.head_ul {
+	margin-left:20px;
+	font-size:14px;}
+
+/**/
+#ceo_video{
+    width: 300px; 
+    height:160px; 
+    position:fixed;
+    margin:40px 0px 0px 0px; 
+    padding:0;}
+    
+#beyond0_d {
+    cursor: pointer;
+    position:absolute;
+    top:200px;
+    left: 0px;
+    width:300px;
+    background:#fff;    
+    margin-right:1px;
+    z-index:10;
+    color:#47669d;
+    text-align: center;
+    font-size:14px;
+    font-weight: bold;
+    text-decoration:underline;
+	padding:1px 0 0 1px;}
+
+#beyond1_d {
+    cursor: pointer;
+    position:absolute;
+    top:250px;
+    left: 0px;
+    width:300px;
+    background:#fff;    
+    margin-right:1px;
+    z-index:10;
+    color:#47669d;
+	font-size:14px;
+	text-align: center;
+	font-weight: bold;
+    text-decoration:underline;
+	padding:1px 0 0 1px;}
+
+#beyond2_d {
+    cursor: pointer;
+    position:absolute;
+    top:300px;
+    left: 0px;
+    width:300px;
+    background:#fff;    
+    margin-right:1px;
+    z-index:10;
+    color:#47669d;
+    font-size:14px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration:underline;
+	padding:1px 0 0 1px;}
+
+#movie1, #movie2, #movie3, #thoughts{
+	border:8px solid #282828;
+	border-radius: 10px;
+	box-shadow: 0px 4px 7px 0px #000;
+	-moz-box-shadow: 0px 4px 7px 0px #000;
+	-webkit-box-shadow: 0px 4px 7px 0px #000;}
+
+img.camera {
+	bottom:0;}

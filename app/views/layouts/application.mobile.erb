@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>Gerber Finance</title>
+    <%= stylesheet_link_tag "application-mobile" %>
+	<%= javascript_include_tag "application-mobile" %>
+	<%= csrf_meta_tags %>
+	<%= analytics_init if Rails.env.production? %>  
+	</head>
+ <body>
+	<div id="header"><img src="/assets/Logo.png" class="logo" alt="logo"/>
+	<img src="/assets/gerberfinance.png" alt="gerberfinance"/></div>
+	
+<table class="mobile_menu">
+<td>
+<div id="AccordionContainer" class="AccordionContainer">
+
+  <div onclick="runAccordion(1);">
+    <div class="AccordionTitle" id="Accordion1Title" onselectstart="return false;">
+      about us
+    </div>
+  </div>
+  <div id="Accordion1Content" class="AccordionContent">
+    Founded in 1995 by Gerald Joseph, Gerber Finance is the product of a joint venture between 
+	<a href="http://www.investec.co.za/" target="_blank"><img src="/assets/investec_m.png" alt="Investec"></a>, a member of the London Stock Exchange and the 
+	<a href="http://www.gerber.co.za/" target="_blank"><img src="/assets/ggg_m.png" alt="Gerber Goldschmidt Group"></a>, a leading international trading 
+	and investment company since 1920.<br><br>
+	
+	We provide businesses with credit lines from $500,000 to $10 million and specialize in financing
+	the growth of importers, distributors, service providers, and manufacturers across a wide range of industries. Our 
+	goal is your long-term success, so we help you simultaneously increase your bottom line and 
+	build infrastructure to achieve enduring, profitable growth.
+  </div>
+
+  <div onclick="runAccordion(2);">
+    <div class="AccordionTitle" id="Accordion2Title" onselectstart="return false;">
+      client testimonials
+    </div>
+  </div>
+  <div id="Accordion2Content" class="AccordionContent">
+		<table class="video_table">	
+			<td>	
+				<p class="video_text"></p>
+    		<iframe class="video_drew" src="http://player.vimeo.com/video/126533210?api=1&portrait=0&byline=0&autoplay=0&title=0" width="130" height="130" frameborder="0"></iframe>
+			<iframe class="video_schofield" src="http://player.vimeo.com/video/127675572?api=1&portrait=0&byline=0&autoplay=0&title=0" width="130" height="130" frameborder="0"></iframe>
+			<iframe class="video_paramount" src="http://player.vimeo.com/video/126533209?api=1&portrait=0&byline=0&autoplay=0&title=0" width="130" height="130" frameborder="0"></iframe>
+    		<iframe class="video_pilgrim" src="http://player.vimeo.com/video/87966588?api=1&portrait=0&byline=0&autoplay=0&title=0" width="130" height="130" frameborder="0"></iframe>
+			
+			<div><img class="mobile_drew" src="/assets/video_thumbs/numi.png" alt="Numi Tea" /></div> 
+			<div><img class="mobile_schofield" src="/assets/video_thumbs/babygourmet.png" alt="Baby Gourmet" /></div> 
+  			<div><img class="mobile_paramount" src="/assets/video_thumbs/revive.png" alt="Revive" /></div> 
+			<div><img class="mobile_pilgrim" src="/assets/video_thumbs/madelaine.png" alt="Madelaine" /></div> 
+
+			</td>
+  		</table>
+  </div>
+  <div onclick="runAccordion(3);">
+    <div class="AccordionTitle" id="Accordion3Title" onselectstart="return false;">
+      get inside your lender's head
+    </div>
+  </div>
+  <div id="Accordion3Content" class="AccordionContent">
+		<p style="font-size:20px; text-align:center; vertical-align:top; margin-top:0px !important;">First impressions are critical to any relationship, especially when it involves 
+		something as important as your business and your lender's capital. Gerber Finance CEO 
+		Gerald Joseph weighs in on what lenders are looking for when they meet borrowers and how 
+		to strike the best deal.
+		</p>
+	<table class="ceo_m_table">
+		<td class="ceo_m_td1">
+   			<iframe class="video_beyond1" src="http://player.vimeo.com/video/50234179?api=1&player_id=movie1&portrait=0&byline=0&autoplay=0&title=0" width="70" height="70" frameborder="0"></iframe>        
+			<img src="/assets/play_m.png" class="play_m1"/>
+			<p class="ceo_m">Beyond the Bank</p>
+		</td>
+		<td class="ceo_m_td2">
+			<iframe class="video_beyond2" src="http://player.vimeo.com/video/50234180?api=1&player_id=movie2&portrait=0&byline=0&autoplay=0&title=0" width="70" height="70" frameborder="0"></iframe>
+			<img src="/assets/play_m.png" class="play_m2"/>
+			<p class="ceo_m">Get Inside Your Lender's Head</p>
+		</td>
+		<td class="ceo_m_td3">
+    		<iframe class="video_beyond3" src="http://player.vimeo.com/video/50234181?api=1&player_id=movie3&portrait=0&byline=0&autoplay=0&title=0" width="70" height="70" frameborder="0"></iframe>
+			<img src="/assets/play_m.png" class="play_m3"/>
+			<p class="ceo_m">Every Business Has Problems</p>
+		</td>
+	</table>
+  </div>
+
+
+  <div onclick="runAccordion(4);">
+    <div class="AccordionTitle" id="Accordion4Title" onselectstart="return false;">
+      contact us
+    </div>
+  </div>
+  <div id="Accordion4Content" class="AccordionContent">
+    <table class="contact_m"> 
+    	<td class="address_m">
+    		<a href="http://maps.google.com/maps?q=google+maps+488+madison+avenue&hl=en&ll=40.758875,-73.974767&spn=0.003149,0.0067&hnear=488+Madison+Ave,+New+York,+10022&gl=us&t=h&z=18" target="_blank" class="directions"><img src="/assets/directions_m.png" class="directions_m"></a><br><br>
+    		<a href="http://maps.google.com/maps?q=google+maps+488+madison+avenue&hl=en&ll=40.758875,-73.974767&spn=0.003149,0.0067&hnear=488+Madison+Ave,+New+York,+10022&gl=us&t=h&z=18" target="_blank" class="directions">488 Madison Avenue<br>Suite 800<br />New York, NY  10022</a>
+  		</td>
+  		<td class="telephone_m"">
+  			<a href="tel:212-888-3833" class="telephone_mlink"><img src="/assets/telephone.png"/></a><br><br>
+  			<a href="tel:212-888-3833" style="text-decoration:none;">(212) 888-3833</a>
+  		</td>
+  	</table>
+  </div>
+</div>
+</td>
+</table>
+<p class="fullsite_link">
+  <% if mobile_device? %>
+    <%= link_to "Full Site", :mobile => 0 %>
+  <% end %>
+</p> 
+  </body>
+</html>
+

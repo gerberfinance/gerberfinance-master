@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<h1><%= title 'Finance Calculator' %></h1>
+
+<link href="/assets/all/layout/stylesheet.css.scss?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/calc/calc.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/all/models/model.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/application-print.css?body=1" media="print" rel="stylesheet" type="text/css" />
+<link href="/assets/print/blueprint/print.css?body=1" media="print" rel="stylesheet" type="text/css" />
+<script src="/assets/all/calc.js?body=1" type="text/javascript"></script>
+<script src="/assets/all/currency.js?body=1" type="text/javascript"></script>
+<script src="/assets/all/packed.js?body=1" type="text/javascript"></script>
+<script src="/assets/all/tinybox.js?body=1" type="text/javascript"></script>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="1hKfo11LHCit8zIUYYTAwfr1mRxczDsTqWNvItm7FJ0=" name="csrf-token" />
+<%= analytics_init if Rails.env.production? %> 
+
+<!--[if gte IE 5]>
+    <link href="/assets/application-ie.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/ie/blue_print/ie.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/ie/ie_hacks.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+</head>
+<body class="popups_calc" onload=";setTextFocus();UpdateFiles()">
+<div id="header_calculator" ">
+	<img src="/assets/text/calculator.png" class="popup" alt="finance calculator"/>
+</div>
+<div class="calc_body">
+<br>
+		<p class="calculator_text" style="text-align:center;"><b>Fill in the yellow boxes below to see how the additional funding can make an impact.<b></p>
+	
+	<tr>
+    	
+    	<td height="1072" valign="top">
+    	<table class="calcBox">
+      		<tbody>
+        <tr>
+        
+          <td align="left"><form id="calculator" name="calculator" method="post" action="">
+            <table border="0" cellpadding="0" cellspacing="0" class="calc_top">
+                  	<hr width="600px" />
+              <tbody>
+                <tr>
+                  <td align="left" width="450"><table cellpadding="0" cellspacing="0">
+                    <tbody>
+                      <tr>
+                        <td height="18" width="593"><span class="style5">Own funds (capital) in the business plus any trade payable and other available credit</span></td>
+                            </tr>
+                      </tbody>
+                    </table></td>
+                      <td align="left" width="91"><input id="txtCapitalFunds" size="10" onclick="this.value=getValue(this.value)" onblur="this.value=formatCurrency(this.value);UpdateFiles();" tabindex="1" type="text" /></td>
+                    </tr>
+                <tr>
+                  <td align="left" width="350"><span class="style5">Bank Funding</span></td>
+                      <td align="left" width="91"><input id="txtBankFunding" size="10" onclick="this.value=getValue(this.value)" onblur="this.value=formatCurrency(this.value);UpdateFiles();" tabindex="2" type="text" /></td>
+                    </tr>
+                <tr>
+                  <td width="350" align="left" class="style5">Bank Interest Rate</td>
+                      <td align="left" width="91"><input id="txtBankInterestRate" size="10" onblur="this.value=getDecimal(this.value);UpdateFiles()" tabindex="3" type="text" /></td>
+                    </tr>
+                <tr>
+                  <td align="left" width="350"><span class="style5"> Gross Profit Percentage</span></td>
+                      <td align="left" width="91"><input id="txtGrossMarginPercent" size="10" onblur="this.value=getDecimal(this.value);UpdateFiles()" tabindex="4" type="text" /></td>
+                    </tr>
+                <tr>
+                  <td align="left" width="350"><span class="style5"> Annual Overhead</span></td>
+                      <td align="left" width="91"><input id="txtAnnualOverhead" size="10" onclick="this.value=getValue(this.value)" onblur="this.value=formatCurrency(this.value);UpdateFiles();" tabindex="5" type="text" /></td>
+                    </tr>
+                <tr>
+                  <td align="left" width="350"><span class="style5">Trade Cycle in days *</span></td>
+                      <td align="left" width="91"><input id="txtTradeCycle1" size="10" onblur="this.value=(this.value);UpdateFiles();" tabindex="6" type="text" /></td>
+					</tr>
+                <tr>
+                  <td align="left" width="350"><span class="style5">Estimated Net Profit</span></td>
+                      <td align="left" width="91"><input name="Input3" class="calcNet" id="txtEstimatedNetProfit" onblur="this.value=formatCurrency(this.value);UpdateFiles();" size="10" readonly="readOnly" tabindex="7" /></td>
+                    </tr>
+                <tr>
+                    <td><span width="350px"n><p class="style5" style="text-align:right; letter-spacing:0px; font-size:10px; font-weight:lighter;">* - how many days from   paying your supplier until you get paid for the sale.</p></span></td>
+	             </tr>    
+                </tbody>
+              </table>
+                           
+            <table cellpadding="0" cellspacing="0" class="calc_top">
+              <tbody>
+                <tr>
+                  <td align="left" width="900"><span class="style5">It's really very simple. With existing funding, total resources are </span></td>
+                      <td align="left" width="91"><input name="Input2" class="calcSum" id="txtTotalResources" onblur="this.value=formatCurrency(this.value);UpdateFiles();" value="0" size="10" readonly="readOnly" tabindex="11" /></td>
+                    </tr>
+                <tr>
+                  <td width="900" align="left" class="style5">With a trade cycle of </td>
+                      <td align="right"><input name="Input2" class="calcSum" id="txtTradeCycle2" value="0" size="10" readonly="readOnly" tabindex="12" /></td>
+                      <td width="120" align="left" class="style5" style="font-size:9px;">&nbsp; days</td>
+                    </tr>
+                <tr>
+                  <td width="459" align="left" class="style5">Funds can be turned </td>
+                      <td align="right"><input name="Input2" class="calcSum" id="txtOverallAvlblCash" onblur="this.value=formatCurrency(this.value);UpdateFiles();" value="0" size="10" readonly="readOnly" tabindex="13" /></td>
+                      <td align="left" class="style5" style="font-size:9px;">&nbsp; times per year </td>
+                    </tr>
+                <tr>
+                  <td width="459" align="left" class="style5">At a gross of</td>
+                      <td align="right"><input name="Input2" class="calcSum" id="txtGrossMargin" onblur="this.value=getDecimal(this.value);UpdateFiles()" value="0" size="10" readonly="readOnly" tabindex="14" /></td>
+                    </tr>
+                <tr>
+                  <td width="459" align="left" class="style5" style="height: 30px;">Sales of</td>
+                      <td style="height: 30px;" align="right"><input name="Input2" class="calcSum" id="txtTotalSales" onblur="this.value=formatCurrency(this.value);UpdateFiles();" value="0" size="10" readonly="readOnly" tabindex="15" /></td>
+                      <td align="left" class="style5" style="font-size:9px;">&nbsp; could be generated</td>
+                    </tr>
+                <tr>
+                  <td width="459" align="left" class="style5">Gross Profit would be</td>
+                      <td align="right"><input name="Input2" class="calcSum" id="txtGrossProfit" onblur="this.value=formatCurrency(this.value);UpdateFiles();" value="0" size="10" readonly="readOnly" tabindex="16" /></td>
+                    </tr>
+                <tr>
+                  <td width="459" align="left" class="style5">Less Expenses of </td>
+                      <td align="right"><input name="Input22" class="calcSum" id="txtAnnualExpence" onblur="this.value=formatCurrency(this.value);UpdateFiles();" value="0" size="10" readonly="readOnly" tabindex="17" /></td>
+                    </tr>
+                <tr>
+                  <td width="459" align="left" class="style5">And less interest of</td>
+                      <td align="right"><input name="Input2" class="calcSum" id="txtInterestCost" onblur="this.value=formatCurrency(this.value);UpdateFiles();" value="0" size="10" readonly="readOnly" tabindex="18" /></td>
+                    </tr>
+                <tr>
+                  <td width="459" align="left" class="style5">Net profit will be</td>
+                      <td align="right"><input name="Input2" class="calcSum" id="txtNetProfit" onblur="this.value=formatCurrency(this.value);UpdateFiles();" value="0" size="10" readonly="readOnly" tabindex="19" /></td>
+                    </tr>
+                </tbody>
+              </table>
+                <br />
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tbody>
+                <tr>
+                 <hr width="250px" />
+                  <td class="supText" align="left"><p class="style5" style="text-align:center; font-weight:bold;">Now, assume a lender either replaces the bank with a bigger line or provides additional funding to the bank</p></td>
+                    </tr>
+                    
+                </tbody>
+              </table>
+              <hr width="250px" />
+                <br />
+            <table cellpadding="0" cellspacing="0" width="600" class="calc_top">
+              <tbody>
+                <tr>
+                  <td width="290" align="left" class="style5"><span class="style10"><strong>Banks Fund</strong></span></td>
+                      <td align="left" width="118"><input name="Input" id="txtBanksFund" onblur="this.value=formatCurrency(this.value);UpdateFiles();" onclick="this.value=getValue(this.value)" value="" size="10" tabindex="8" /></td>
+                      <td width="400" align="right" class="style5" style="text-align:right; padding-right:8px !important;"><strong>new lender <br />funding   </strong></td>
+                      <td align="left" width="90"><input name="Input" id="txtBanksSuplementalFund" onblur="this.value=formatCurrency(this.value);UpdateFiles();" onclick="this.value=getValue(this.value)" value="" size="10" tabindex="9" />                      </td>
+                    </tr>
+                <tr>
+                  <td width="10" align="left" class="style5"><span class="style10"><strong>Supplemental lenders rate</strong></span></td>
+                      <td align="left"><input id="txtSuplimentalLendersRate" size="10" onblur="this.value=getDecimal(this.value);UpdateFiles()" tabindex="9" type="text" /></td>
+                      <td></td>
+                      <td align="left">&nbsp;</td>
+                    </tr>
+                <tr>
+                  <td align="left" class="style5"><span class="style10"><strong>Estimated New Net Profit</strong></span></td>
+                      <td align="left"><input name="Input" id="txtEstdNewNetProfit" class="calcSum" size="10" onblur="this.value=formatCurrency(this.value);UpdateFiles()" tabindex="10" type="text" /></td>
+                      <td></td>
+                      <td align="right">&nbsp;</td>
+                    </tr>
+                <tr>
+                  <td></td>
+                    </tr>
+                </tbody>
+              </table>
+                <br />
+            <table cellpadding="0" cellspacing="0" class="calc_bottom">
+              <!-- <tr>
+                        <td align="left" width="462">Now, with the supplemental lender   providing</td>
+                        <td width="74" align="right"><input name="Input2" class="calcSum" id="txtSuplimentalLendersProvider" onblur="this.value=formatCurrency(this.value);UpdateFiles();" value="250,000" size="12" readonly="readOnly" /></td>
+                      </tr>-->
+              <tbody>
+                <tr>
+                  <td width="462" align="left" class="style5">Under the new funding arrangement, additional funding is</td>
+                      <td align="right"><input name="Input2" class="calcSum" id="txtAdditionAval" onblur="this.value=formatCurrency(this.value);UpdateFiles();" size="10" readonly="readOnly" value="0" tabindex="20" /></td>
+                    </tr>
+                <tr>
+                  <td width="462" align="left" class="style5">On the same trade cycle the additional funds can be turned</td>
+                      <td align="right"><input name="Input2" class="calcSum" id="txtAdditionalFunds" size="10" readonly="readOnly" value="0" tabindex="21" /></td>
+                      <td width="100" align="left" class="style5" style="font-size:9px;">&nbsp; times per year</td>
+                    </tr>
+                <tr>
+                  <td width="462" align="left" class="style5">Which could result in additional sales of</td>
+                      <td align="right"><input name="Input2" class="calcSum" id="txtAdditionalSales" onblur="this.value=formatCurrency(this.value); UpdateFiles();" size="10" readonly="readOnly" value="0" tabindex="22" /></td>
+                    </tr>
+                <tr>
+                  <td width="462" align="left" class="style5">Which translates into gross profit of</td>
+                      <td align="right"><input name="Input2" class="calcSum" id="txtTransGrossProfit" onblur="this.value=formatCurrency(this.value);UpdateFiles();" value="0" size="10" readonly="readOnly" tabindex="23" /></td>
+                    </tr>
+                <tr>
+                  <td width="462" align="left" class="style5">Assumimg the same expense base the only additional cost is extra interest of</td>
+                      <td align="right"><input name="Input2" class="calcSum" id="txtInterestOf" onblur="this.value=formatCurrency(this.value);UpdateFiles();" value="0" size="10" readonly="readOnly" tabindex="24" /></td>
+                    </tr>
+                <!--  <tr>
+                        <td align="left" width="417">You will be able to generate Sales   of</td>
+                        <td align="right"><input name="Input24" class="calcSum" id="txtSalesGenerate" onblur="this.value=formatCurrency(this.value);UpdateFiles();" value="2,000,000" size="12" readonly="readOnly" /></td>
+                      </tr>
+                      <tr>
+                        <td align="left" width="417">At the same Gross Margin, you will   now generate Gross Profits of</td>
+                        <td align="right"><input name="Input2" class="calcSum" id="txtGrossMarginwithGrossProfit" onblur="this.value=formatCurrency(this.value);UpdateFiles();" value="1,000,000" size="12" readonly="readOnly" /></td>
+                      </tr>
+                      <tr>
+                        <td align="left" width="417">And, instead of Interest costing   you</td>
+                        <td align="right"><input name="Input22" class="calcSum" id="txtInterestCosting" onblur="this.value=formatCurrency(this.value);UpdateFiles();" value="9,250" size="12" readonly="readOnly" /></td>
+                      </tr>
+                      <tr>
+                        <td align="left" width="417">It will now cost</td>
+                        <td align="right"><input name="Input2" class="calcSum" id="txtInterestPresentCost" onblur="this.value=formatCurrency(this.value);UpdateFiles();" value="30,000" size="12" readonly="readOnly" /></td>
+                      </tr>
+                    <tr>
+                        <td align="left" width="417">An extra cost of</td>
+                        <td align="right"><input name="Input2" class="calcSum" id="txtInterestExtraCost" onblur="this.value=formatCurrency(this.value);UpdateFiles();" value="20,750" size="12" readonly="readOnly" /></td>
+                      </tr>
+                      <tr>
+                        <td align="left" width="417">But, this creates extra Sales   of</td>
+                        <td align="right"><input name="Input2" class="calcSum" id="txtExtraSalesCreated" onblur="this.value=formatCurrency(this.value);UpdateFiles();" value="600,000" size="12" readonly="readOnly" /></td>
+                      </tr>-->
+                <tr>
+                  <td width="462" align="left" class="style5">Yielding additional net profit of</td>
+                      <td align="right"><input name="Input2" class="calcSum" id="txtAdditionalNetProfit" onblur="this.value=formatCurrency(this.value);UpdateFiles();" value="0" size="10" readonly="readOnly" tabindex="25" /></td>
+                    </tr>             
+                    <tr>
+                      <td width="462" align="left" class="style5">For a new total net profit of</td>
+                      <td align="right" ><input name="Input2" class="calcSumTotal" id="txtTotalNewNetProfit" onblur="this.value=formatCurrency(this.value);UpdateFiles();" value="0" size="10" readonly="readOnly" tabindex="26" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </form></td>
+          </tr>
+        <tr>
+          <td align="left" height="20"></td>
+				</tr>
+        		
+				<tr>
+    				<td height="30" align="center" valign="top"><p>
+        				<input id="Reset1" style="vertical-align: middle; width:120px;" type="reset" value="Reset Calculator" onclick="ClearFields();" class="calc_reset"/>
+
+						<blockquote>
+        					<blockquote>
+            					<blockquote>
+                					<blockquote>
+                    					<blockquote>
+                        					<p style="font-size:12px;">PLEASE NOTE
+                        						<br /> 
+                        							This calculator is for illustration purposes only and to make a meaningful comparison, 
+                        							assumes 100% utlization of resources 100% of the time.
+                        							<br><img src="/assets/print.png" style="cursor:pointer;" onClick="window.print()" class="print" alt="print"/>	
+                        					</p>
+                    					</blockquote>
+            						</blockquote>
+            					</blockquote>
+        					</blockquote>
+    					</blockquote>
+    					
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</td>
+	</tr>	
+</body
+</html>

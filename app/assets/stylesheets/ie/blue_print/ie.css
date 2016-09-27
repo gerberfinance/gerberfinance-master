@@ -1,0 +1,37 @@
+.body {}
+
+#cssmenu > ul > li > a:hover{
+	color: #979796;}
+	
+#cssmenu ul li.has-sub:hover > a{
+	color: #979796;}	
+	
+#footer {} 
+
+
+.calc {
+	margin-left: 1px !important;
+	margin-right: 1px !important;}
+
+.calc:hover {
+	margin-left: 1px !important;
+	margin-right: 1px !important;}
+
+.top10 {
+	margin-left: 1px !important;
+	margin-right: 1px !important;}
+
+.top10:hover {
+	margin-left: 1px !important;
+	margin-right: 1px !important;}
+
+.gear {
+	margin-left: 1px !important;
+	margin-right: 1px !important;}
+
+.gear:hover {
+	margin-left: 1px !important;
+	margin-right: 1px !important;}
+
+.content {
+ 	margin-left: 225px !important;}

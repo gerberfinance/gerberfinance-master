@@ -1,0 +1,165 @@
+#footer {
+   display:inline-block;
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:118px;
+   width:100%;
+   min-width:800px;	
+   z-index:100;
+   background: url(/assets/grey_bgf.png) repeat-x;}
+   
+* html #footer {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');}
+
+#footer ul {
+	border-left: 1px solid #252525;
+	white-space:nowrap;
+	top:3px;
+	float: right; 
+	margin:1px, 1px, 1px, 1px;
+	padding:0;}
+
+#footer ul li {
+	border-left: 1px solid #252525;
+	top:-3px;
+	float: left; 
+	margin:1px, 1px, 1px, 1px;
+	padding:0;}
+
+#footer > ul > li {
+	border: none !important;
+	list-style:inside none; 
+	padding:0; 
+	margin:0; 
+	float:left; 
+	display:inline; 
+	position:relative;} 
+
+#footer > ul > li > a:after { 
+	content:''; 
+	position:absolute; 
+	border-right:1px solid #252525; 
+	top:3px; 
+	bottom:-1px; 
+	right:-2px; 
+	z-index:99; }
+
+/* inline elements*/
+
+.floatset { 
+	position: relative;
+	margin-top: -120px;
+	}
+
+.calc {
+	border:none !important;
+	display: block;
+	margin-top:3px;
+	width: 145px;
+	height: 89px;
+	background: url('/assets/calc_static5.png') bottom;
+	padding-left:0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top:7px;
+	cursor:pointer;
+}
+.calc:hover {
+	border:none !important;
+	display: block;
+	margin-top:3px;
+	width: 145px;
+	height: 89px;
+	background: url('/assets/calc_move6.gif') bottom;
+	padding-left:0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top:7px;
+	cursor:pointer;}
+
+.top10 {
+	display: block;
+	bottom:0px;
+	width: 145px;
+	height: 89px;
+	background: url('/assets/10_static5.png') bottom;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top:7px;
+	white-space:nowrap;
+	cursor:pointer;}
+
+.top10:hover {
+	display: block;
+	bottom:0px;
+	width: 145px;
+	height: 89px;
+	background: url('/assets/10_move5.gif') bottom;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top:7px;
+	white-space:nowrap;
+	cursor:pointer;}
+
+.gear {
+	display: block;
+	bottom:0px;
+	width: 145px;
+	height: 89px;
+	background: url('/assets/gear_static5.png') bottom;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top:7px;
+	white-space:nowrap;
+	cursor:pointer;}
+
+.gear:hover {
+	display: block;
+	bottom:0px;
+	width: 145px;
+	height: 89px;
+	background: url('/assets/gear_move6.gif') bottom;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top:7px;
+	white-space:nowrap;
+	cursor:pointer;}
+	
+.flash {
+	display: block;
+	bottom:0px;
+	width: 145px;
+	height: 89px;
+	background: url('/assets/flash_static.png') bottom;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top:7px;
+	white-space:nowrap;
+	cursor:pointer;}
+
+.flash:hover {
+	display: block;
+	bottom:0px;
+	width: 145px;
+	height: 89px;
+	background: url('/assets/flash_move.gif') bottom;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top:7px;
+	white-space:nowrap;
+	cursor:pointer;}	
+
+.footer_image_text {
+	font-size:.58em;
+	text-align:  center;
+	color:#fff;
+	cursor:pointer;}
+
+.footer_image_text1 {
+	font-size:.6em;
+	text-align:  center;
+	color:#fff;
+	cursor:pointer;}
+	

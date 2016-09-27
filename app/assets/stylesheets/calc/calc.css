@@ -1,0 +1,97 @@
+h4.calc_heading {
+	font-size:30px !important;}
+
+p.calc_text {
+	margin: 20px 50px 0px 50px;
+	font-size:16px !important;}
+
+p.calculator_text {
+	margin-left:20px;
+	font-size:16px !important;
+	width:700px;}	
+
+#calculator_open {
+	margin-left:0;
+	text-decoration:none;
+	text-align:center;}
+
+
+.style5 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px;}
+.style10 {font-family: Verdana, Arial, Helvetica, sans-serif}
+.style11 {font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; }
+
+.number {
+	font-size: 10px;
+	font-weight: bold;
+	color: #A4B6D6;
+	padding-right: 8px;}
+
+.calcBox {
+	width: 736px;
+	margin-left:auto;
+	margin-right:auto;}
+
+input {
+	background-color:#f6f9bf;
+	border:1px solid #dbdbdb;
+	padding:5px;
+	border-radius: 7px;
+	-webkit-border-radius:7px;
+	-moz-border-radius:7px;
+	color: #000;
+	font-style:italic;
+	width: 95px;
+	text-align:right;}
+		
+input.calcNet {
+	font-weight: bold;
+	background-color: #6b768c;
+	color: #fff;
+	border: 1px solid #dbdbdb;}
+	
+input.calcSum {
+	background-color: #e0eafd;
+	border: 1px solid #dbdbdb;} 
+	
+input.calcSumTotal {
+	background-color: #6b768c;
+	border: 1px solid #dbdbdb;
+	color: #fff;
+	font-weight: bold;} 
+
+.calc_reset {
+text-align:center !important;
+
+background:#000000; 
+background:-moz-linear-gradient(top, #ffffff  60%, #cacaca 100%); 
+background:-webkit-gradient(linear, left top, left bottom, color-stop(60%,#ffffff), color-stop(100%,#cacaca)); 
+background:-webkit-linear-gradient(top, #ffffff  60%,#cacaca 100%); 
+background:-o-linear-gradient(top, #ffffff  60%,#cacaca 100%); 
+background:-ms-linear-gradient(top, #ffffff  60%,#cacaca 100%); 
+background:linear-gradient(top, #ffffff  60%,#cacaca 100%); 
+filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff ', endColorstr='#cacaca',GradientType=0 ); }
+
+.calc_reset:hover{
+text-align:center !important;
+color:#fff;
+font-weight:bold;
+background:#000000; 
+background:-moz-linear-gradient(top, #ababab 60%, #404040 100%); 
+background:-webkit-gradient(linear, left top, left bottom, color-stop(60%,#ababab), color-stop(100%,#404040)); 
+background:-webkit-linear-gradient(top, #ababab 60%,#404040 100%); 
+background:-o-linear-gradient(top, #ababab 60%,#404040 100%); 
+background:-ms-linear-gradient(top, #ababab 60%,#404040 100%); 
+background:linear-gradient(top, #ababab 60%,#404040 100%); 
+filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#404040', endColorstr='#000000',GradientType=0 ); }
+
+
+.calc_top {
+	margin: 10px 0px 10px 90px;
+}
+
+.calc_bottom {
+	margin: 10px 0px 10px 80px;
+}
+
+
+

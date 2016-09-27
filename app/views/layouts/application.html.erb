@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="/assets/favicon.ico">	
+  	<%= display_meta_tags :site => 'Gerber Finance', 
+  						  :description => 'At Gerber, we give you the tools you need to grow. We learn your business, assess the unique nature of your credit needs, deliver expedited turnaround and provide unfailing access to our experienced management team. The result is significant and consistent growth.',
+    					  :keywords => 'Gerber Finance, Gerber Finance Inc, finance new york, asset based lending, trade finance, loan new york, finance nyc, asset based loans, abl, Gerber' %>
+	<%= stylesheet_link_tag "application-all", :media => "all" %>
+	<%= stylesheet_link_tag "application-print", :media => "print" %>
+	<%= javascript_include_tag "application-all", :media => "all" %>
+	<%= csrf_meta_tags %>
+	<%= analytics_init if Rails.env.production? %>    
+	<meta name = "viewport" content = "user-scalable = no">
+	<script> function pauseAllVideos(){ $("iframe").each(function() { this.contentWindow.postMessage('{ "method": "pause" }', "http://player.vimeo.com"); }); } </script>
+<!--[if gte IE 5]>
+    <%= stylesheet_link_tag "application-ie", :media => "all" %>
+<![endif]-->	
+<!--[if lt IE 7]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
+<![endif]-->
+<!--[if lt IE 8]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
+<![endif]-->
+<!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<![endif]-->
+</head>
+
+<body class="layout">
+<div id="menu"></div>
+<div id="menu_fix">
+	<a href='/gerber'><img src="/assets/Logo.png" class="logo" alt="Gerber Finance Inc." /></a>
+	<div id='cssmenu'>
+		<ul>
+   		<li class='active '><a href='/home'><span>home</span></a></li>
+   		<li class='has-sub '><a href='/about'><span style="cursor:pointer;">about us</span></a>
+      	  <ul>
+         	<li><a href='/about'><span>about</span></a></li>
+         	<li><a href='/history'><span>history</span></a></li>
+         	<li><a href='/credit'><span>credit philosophy</span></a></li>
+         	<li><a href='/profiles'><span>profiles</span></a></li>
+      	  </ul>
+   		</li>
+   		<li><a href='/asset'><span>asset based</span></a></li>
+   		<li><a href='/borrowing'><span>borrowing base</span></a></li>
+   		<li class='has-sub '><a href='/testimonials'><span style="cursor:pointer;">testimonials</span></a>
+   		</li>
+   		<li class='has-sub '><a href='/contact'><span style="cursor:pointer;">contact</span></a>
+   		  <ul>	
+   			<li><a href='/contact'><span style="cursor:pointer;">contact us</span></a></li>
+			<li><%= link_to "download application", "/assets/Finance_Application.pdf", :target => '_blank' %></li>
+		  </ul>
+		</li> 
+		</ul>
+		
+	</div>
+	
+</div>
+	
+	<div><%= yield %></div>
+
+	<div id='footer'>
+	
+		<img src="/assets/gerberfinance.png" class="gerberfinance" alt="Gerber Finance Inc." />
+		<h3 class="name"> &copy; 2012 Gerber Finance Inc.</h3>
+		<p class="redirect"><a target="_blank" href="https://www.stuckynet-link.com/gerber/" class="redirect">client login</a><p>
+		
+		<ul class="floatset">
+			<li onclick="pauseAllVideos(); TINY.box.show({iframe:'/flash',boxid:'frameless',width:800,height:600,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})" class="footer_image_text1"><a class="flash"></a>gerber in a flash </li>
+			<li onclick="pauseAllVideos(); TINY.box.show({iframe:'/calc',boxid:'frameless',width:800,height:500,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})" class="footer_image_text"><a class="calc"></a>finance calculator</li>
+			<li onclick="pauseAllVideos(); TINY.box.show({iframe:'/top10',boxid:'frameless',width:800,height:500,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})" class="footer_image_text"><a class="top10"></a>to ask your lender</li>
+   			<li onclick="pauseAllVideos(); TINY.box.show({iframe:'/gear',boxid:'frameless',width:800,height:500,fixed:false,maskid:'bluemask',maskopacity:40,closejs:function(){closeJS()}})" class="footer_image_text"><a class="gear"></a>get inside your lender's head</li>
+   		</ul>
+   		
+	</div>
+</body>
+</html>

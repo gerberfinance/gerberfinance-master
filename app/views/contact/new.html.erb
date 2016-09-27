@@ -1,0 +1,113 @@
+<h1><% set_meta_tags :title => 'Contact Us',
+                 :description => 'Get to know us, ask a question, apply for line of credit...',
+                 :keywords => 'credit application, contact gerber, credit line' %>
+</h1>
+
+<body id="contact_body">
+<div id="contact_left">
+
+<%= form_for @message, :class => "form", :url => contact_path do |form|%>
+<div style="display:none;"><%= form.error_messages %></div>
+
+  <fieldset class="fields">
+  
+    <div class="field">
+        <p class="contact_name">
+        	<%= form.label "Name" %> *<br />
+        	<%= form.text_field :name %>
+    	</p>
+    </div>
+    
+    <div class="field">
+      	<p class="contact_telephone">
+      		<%= form.label "Telephone" %><%= form.label "Email", :class => "contact_email_label" %> *<br />
+      			<p class="contact_area">(<%= form.text_field :area, :maxlength=>"3", :onKeyUp => "return autoTab(this, 3, event);" %>)</p>
+      			<p class="contact_tel1"><%= form.text_field :tel1, :maxlength=>"3", :onKeyUp => "return autoTab(this, 3, event);" %>-</p>
+      			<p class="contact_tel2"><%= form.text_field :tel2, :size => "4", :maxlength=>"4", :onKeyUp => "return autoTab(this, 4, event);"%></p>
+    	
+      		<%= form.email_field :email, :class => "contact_email_input"%>
+      	</p>
+    </div>
+    
+    <div class="field">
+      	<p class="contact_address">
+      		<%= form.label "Address" %> *<br />
+      		<%= form.text_field :address %>
+    	</p>
+    	<p class="contact_city"><%= form.label "City" %>*<%= form.text_field :city %></p>
+    	<p class="contact_state"><%= form.label "State" %>*<%= form.text_field :state, :size => "2", :maxlength=>"2", :onKeyUp => "return autoTab(this, 2, event);"%></p>
+    	<p class="contact_zip"><%= form.label "Zip" %>*<%= form.text_field :zip, :size => "5", :maxlength=>"5", :onKeyUp => "return autoTab(this, 5, event);"%></p>
+    </div>
+    
+    <div class="field">
+      	<p class="contact_btype">
+      		<%= form.label "Type of Business" %> *
+      		<%= form.select :btype,  [['Manufacturer','manufacturer'],['Wholesaler','wholesaler'],['Importer','importer'],['Distributer','distributer'],['Service Provider','service provider'],['Other','other']], :prompt => "-Select-"  %>
+    	</p>
+    </div>
+    
+     <div class="field">
+      	<p class="contact_ptype">
+      		<%= form.label :ptype, :"Product Type" %>
+      		<%= form.text_field :ptype %>
+      	</p>	
+    </div>
+    
+    <div class="field">
+    	<p class="contact_ptype">
+    		<%= form.label :sales, "Annual Revenue" %><%= form.label :creditline, "Credit Line Required", :class => "contact_sales_label" %><br>
+			<input type=text id="message_sales" name="message[sales]" onBlur="this.value=formatCurrency(this.value)">  
+      		
+      		<input type=text id="message_creditline" name="message[creditline]" onBlur="this.value=formatCurrency(this.value)" class="contact_sales_input">
+    	</p>
+    </div>
+    
+    <div class="field">
+    	<p class="contact_ar">
+      		<%= form.label :ar, "Amount of Current A/R" %><%= form.label :inventory, "Amount of Current Inventory", :class => "contact_inventory_label" %><br>
+      		<input type=text id="message_ar" name="message[ar]" onBlur="this.value=formatCurrency(this.value)">
+    
+      		<input type=text id="message_inventory" name="message[inventory]" onBlur="this.value=formatCurrency(this.value)" class="contact_inventory_input">
+    	</p>
+    </div>
+    
+    <div class="field">
+    	<p class="contact_cmethod">
+    		<%= form.label :"Preferred Means of Contact" %>
+      		<%= form.select :cmethod, [['Telephone','telephone'],['Email','email']], :prompt => "-Select-" %>
+    	</p>
+    </div>
+    
+    <div class="field">
+    	<p class="contact_comments">
+    		<%= form.label "Additional information" %>
+      		<%= form.text_area :comments, :col => "3", :rows => "6"%>
+    	</p>
+    </div>
+    
+  </fieldset>
+  
+  <fieldset class="actions" >
+  
+  <%= form.submit "Send", :class => "contact_submit", :onclick => "this.disabled=true;this.value='Sending...';this.form.submit();" %> 
+  <span id="message"></span>
+  <p style="float:right; font-size: 10px;">* required fields</p> 
+  </fieldset>
+</div>
+
+<div id="contact_right">
+	<h3 style="text-decoration:underline; margin-bottom:-10px; margin-left:-10px;" >New York</h3>
+	<h4 style="margin-bottom:0px;">New York</h4>
+  	<p class="gerber_address1"> 488 Madison Avenue, Suite 800 <br />New York, NY  10022 </p> 
+	<a href="http://maps.google.com/maps?q=google+maps+488+madison+avenue&hl=en&ll=40.758875,-73.974767&spn=0.003149,0.0067&hnear=488+Madison+Ave,+New+York,+10022&gl=us&t=h&z=18" target="_blank" class="mapit">(map it)</a>
+	<a href="tel:212-888-3833" class="gerber_telephone">(212) 888-3833</a>
+	<h3 style="text-decoration:underline; margin-bottom:-10px; margin-top:40px; margin-left:-10px;" >New England</h3>
+  	<h4 style="margin-bottom:0px;">Rhode Island</h4>
+  	<p class="gerber_address1"> 10 Dorrance St., Suite #700 <br />Providence, RI   02903 </p> 
+	<a href="https://maps.google.com/maps?q=10+Dorrance+St.,+Suite+%23700++Providence,+RI+02903&hl=en&sll=41.823828,-71.411968&sspn=0.011113,0.018132&t=h&hnear=10+Dorrance+St+%23700,+Providence,+Rhode+Island+02903&z=16&iwloc=A" target="_blank" class="mapit">(map it)</a>
+	<a href="tel:401-519-3715" class="gerber_telephone">(401) 519-3715</a>
+</div>	
+
+		
+  
+  <% end %>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<h1><% set_meta_tags :title => 'Finance Calculator',
+                 :description => 'The true cost of borrowing. Use our calculator to make comparisons, and see what type of loan is right for you.',
+                 :keywords => 'finance calculator, financial caculator, borrowing, interest rate, calculator' %>
+</h1>
+<link href="/assets/all/layout/stylesheet.css.scss?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/calc/calc.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/all/models/model.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<script src="/assets/all/jquery.js?body=1" type="text/javascript"></script>
+<script src="/assets/all/calc.js?body=1" type="text/javascript"></script>
+<script src="/assets/all/currency.js?body=1" type="text/javascript"></script>
+<script src="/assets/all/packed.js?body=1" type="text/javascript"></script>
+<script src="/assets/all/tinybox.js?body=1" type="text/javascript"></script>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="1hKfo11LHCit8zIUYYTAwfr1mRxczDsTqWNvItm7FJ0=" name="csrf-token" />
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<%= analytics_init if Rails.env.production? %> 
+
+<!--[if gte IE 5]>
+    <link href="/assets/application-ie.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/ie/blue_print/ie.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<link href="/assets/ie/ie_hacks.css?body=1" media="all" rel="stylesheet" type="text/css" />
+<![endif]-->
+ 
+</head>
+<body class="popups">
+<div id="header_popups">
+		<img src="/assets/text/calculator.png" class="popup" alt="finance calculator"/>
+</div>
+	<div class="calc1_body">
+		<h4 class="calc_heading" style="font-size:30px;">the true cost of borrowing</h4>  
+			<p class="calc_text">So often, entrepreneurs and their advisors look only at the interest rate to determine the cost of borrowing. 
+			What they really should be looking at is the benefit to the company of that borrowing. </p>
+			<p class="calc_text">In making comparisons between lenders, if <i>ALL ELSE</i> 
+			is identical, then of course choose the lender offering the lower rate. But, if you have a line of credit from a bank, you may be able 
+			to get a higher return by replacing or supplementing the bank line with a line from another lender, even at higher rates. To test the 
+			impact, we have devised the calculator below.</p>
+	
+	
+<hr width="700px"/>
+
+<div id="calculator_open"><a href="javascript:void(0);" onclick="PopupCalc('/calculator', 'myPop1',800,1000);" style="font-size:11px;"><img src="/assets/calculator1.png" style="border:none;" alt="finance calculator"><br>Click to Open</a>	
+</div>
+</div>	
+</body
+</html>
